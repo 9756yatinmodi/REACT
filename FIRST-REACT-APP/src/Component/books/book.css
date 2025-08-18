@@ -1,0 +1,23 @@
+.input{
+    width: 200px;
+    height:40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+.RemoveBook{
+
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    margin-left: 5px;
+    
+
+}
+.AddBtn{
+
+     background-color: blue;
+    color: white;
+    font-weight: bold;
+
+
+}

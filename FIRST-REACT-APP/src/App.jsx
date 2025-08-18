@@ -1,13 +1,13 @@
-import { useState } from 'react'
+
 import './App.css'
-import Counter from './Component/hooks';
+// import Counter from './Component/hooks';
+import Books from './Component/books/book';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <Counter/>
+    <Books/>
      
     </>
   )
