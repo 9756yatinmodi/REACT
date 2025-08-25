@@ -22,3 +22,4 @@ It demonstrates the concepts of **API fetching**, **state management**, and **pr
 ---
 
 ## screenshot :
+<img width="1919" height="872" alt="Screenshot 2025-08-25 142051" src="https://github.com/user-attachments/assets/e952a01d-ed36-47a0-93bd-324be008bcbc" />
