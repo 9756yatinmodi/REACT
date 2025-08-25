@@ -1,77 +1,77 @@
-import './book.css';
-import { useState } from 'react';
+// 
+import { useState } from "react"; 
+import "./book.css";
 
-const Books=()=>{
-    const [BooksList,SetBooksList]= useState([{
-    
-    id:1,
-    Title:"The secrate",
-    Author:"jksji"
-}]);
+export default function Books() {
+  const [title, setTitle] = useState("");
+  const [author, setAuthor] = useState("");
+  const [index, setIndex] = useState(0);
 
-const [Title,SetTitle]=useState("");
-const [Author,SetAuthor]=useState("");
-const [index, setIndex] = useState(0);
+  const [books, setBooks] = useState([
+    {
+      id: 1,
+      title: "THE SECRATE",
+      author: "Djvndjvn",
+    },
+  ]);
 
-    return(
-    <>
-     <input className='input' type="text" placeholder='Enter Book name...' value={Title}
-     onChange={(e)=>SetTitle(e.target.value)} />
+  const addBook = () => {
+    const newBook = {
+      title: title,
+      author: author,
+    };
+    setBooks([...books, newBook]);
+  };
 
-     <input className='input' type="text" placeholder='Enter Author name...' value={Author}
-     onChange={(e)=>SetAuthor(e.target.value)}/>
+  function removeBook(index) {
+    const temp = [...books];
+    temp.splice(index, 1);
+    setBooks(temp);
+  }
 
+  
+  function updateBook(i) {
+    setIndex(i);
+    setTitle(books[index].title);
+    setAuthor(books[index].author);
+  }
 
-     <button className='AddBtn' onClick={()=>{
-      const Book={
-        id:Date.now(),
-        Title:Title,
-        Author:Author
-      };
-      SetBooksList([...BooksList,Book])
-     }}
-     >Add Book</button>
-     <button
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Book Name.."
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+      />
+      <input
+        type="text"
+        placeholder="Author Name.."
+        value={author}
+        onChange={(e) => setAuthor(e.target.value)}
+      />
+      <button className="AddBtn" onClick={addBook}>Add Book</button>
+      <button
         onClick={() => {
-          const temp = [...BooksList];
-          temp[index].Title =Title;
-          temp[index].Author =Author;
-          SetBooksList(temp);
+          const temp = [...books];
+          temp[index].title = title;
+          temp[index].author = author;
+          setBooks(temp);
         }}
       >
         Update Book
       </button>
 
-
-
-     {
-        BooksList.map((Bk,i)=>{
-          return(
-              <p key={i}>
-             {Bk.Title} - {Bk.Author}
-             <button className='RemoveBook' onClick={()=>{
-                const temp=[...BooksList];
-                temp.splice(i,1);
-                SetBooksList(temp);
-             }}>
-                 Remove
-             </button>
-             <button onClick={()=>{
-              setIndex(i);
-    SetTitle(Bk[index].Title);
-    SetAuthor(Bk [index].Author);
-             }}> EDIT</button>
-            </p>
-          )
-        })
-     }
-    </>
-    
-)
-
-
-
+      {books.map((book, i) => (
+        <div key={i}>
+          <p>
+            {book.title} - {book.author}
+            <button className="RemoveBook" onClick={() => removeBook(i)}>Delete</button>
+            <button onClick={() => updateBook(i)}>Edit</button>
+          </p>
+        </div>
+      ))}
+    </div>
+  );
 }
 
-
-export default Books;

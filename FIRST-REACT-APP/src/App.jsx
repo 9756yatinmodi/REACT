@@ -8,12 +8,13 @@ import Data from "./assets/data"
 const App = () => {
     return (
         <>
-            {
+            {/* {
                 Data.map((detail) => {
                      return<User key={detail.id}  name={detail.name} email={detail.email} />
                 })
             }
-           
+            */}
+            <Books/>
         </>
     )
 }
