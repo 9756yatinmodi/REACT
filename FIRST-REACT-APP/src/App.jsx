@@ -2,8 +2,8 @@
 import './App.css'
 // import Counter from './Component/hooks';
 import Books from './Component/books/book';
-import User from "./Component/props/display";
-import Data from "./assets/data"
+import User from "./Component/props/display";  
+import Data from "./assets/data" 
 
 const App = () => {
     return (
