@@ -11,6 +11,7 @@ const Books=()=>{
 
 const [Title,SetTitle]=useState("");
 const [Author,SetAuthor]=useState("");
+const [index, setIndex] = useState(0);
 
     return(
     <>
@@ -30,21 +31,36 @@ const [Author,SetAuthor]=useState("");
       SetBooksList([...BooksList,Book])
      }}
      >Add Book</button>
+     <button
+        onClick={() => {
+          const temp = [...BooksList];
+          temp[index].Title =Title;
+          temp[index].Author =Author;
+          SetBooksList(temp);
+        }}
+      >
+        Update Book
+      </button>
 
 
 
      {
-        BooksList.map((Bk,index)=>{
+        BooksList.map((Bk,i)=>{
           return(
-              <p key={index}>
+              <p key={i}>
              {Bk.Title} - {Bk.Author}
              <button className='RemoveBook' onClick={()=>{
                 const temp=[...BooksList];
-                temp.splice(index,1);
+                temp.splice(i,1);
                 SetBooksList(temp);
              }}>
                  Remove
              </button>
+             <button onClick={()=>{
+              setIndex(i);
+    SetTitle(Bk[index].Title);
+    SetAuthor(Bk [index].Author);
+             }}> EDIT</button>
             </p>
           )
         })
@@ -56,5 +72,6 @@ const [Author,SetAuthor]=useState("");
 
 
 }
+
 
 export default Books;

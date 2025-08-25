@@ -2,16 +2,21 @@
 import './App.css'
 // import Counter from './Component/hooks';
 import Books from './Component/books/book';
+import User from "./Component/props/display";
+import Data from "./assets/data"
 
-function App() {
-
-  return (
-    <>
-    <Books/>
-     
-    </>
-  )
+const App = () => {
+    return (
+        <>
+            {
+                Data.map((detail) => {
+                     return<User key={detail.id}  name={detail.name} email={detail.email} />
+                })
+            }
+           
+        </>
+    )
 }
+export default App;
 
-export default App
   
