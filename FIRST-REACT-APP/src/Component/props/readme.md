@@ -14,7 +14,7 @@ It demonstrates the concepts of **API fetching**, **state management**, and **pr
 ---
 
 ## 🛠️ Tech Stack
-- **React (Vite / CRA)**
+- **React (Vite / CRA)**    
 - **JavaScript (ES6+)**
 - **Fetch API / Axios**
 - **CSS** for styling
