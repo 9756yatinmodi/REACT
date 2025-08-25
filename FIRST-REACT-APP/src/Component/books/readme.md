@@ -13,10 +13,9 @@ A simple **Book Management System** built with **React** (or plain JS, depending
 
 ---
 
-## 🛠️ Tech Stack
+## 🛠️ Tech Stack   
 - **React.js** / JavaScript
 - **HTML5 / CSS3**
 - **LocalStorage** (for data persistence)
  
  screenrecording:
- 
