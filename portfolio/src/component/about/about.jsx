@@ -2,9 +2,9 @@ import React from "react";
 import "./about.css";
 
 export default function About(props) {
-  const { name, bio, avatar_url, followers, following, company, location } =
+  const { name, bio, avatar_url, followers, following, company, location , public_repos} =
     props.user;
-     const length = props.length;
+     
   return (
     <section className="about-section">
       <div className="detail">
@@ -24,7 +24,7 @@ export default function About(props) {
           </p>
           <p className="follower">
             <span>Repositories - </span>
-            <span> {length}</span>
+            <span> {public_repos}</span>
           </p>
         </div>
         <button className="hire-btn">Hire Me</button>
