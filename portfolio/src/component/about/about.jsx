@@ -4,6 +4,7 @@ import "./about.css";
 export default function About(props) {
   const { name, bio, avatar_url, followers, following, company, location } =
     props.user;
+     const length = props.length;
   return (
     <section className="about-section">
       <div className="detail">
@@ -20,6 +21,10 @@ export default function About(props) {
           <p className="follower">
             <span>Following - </span>
             <span> {following}</span>
+          </p>
+          <p className="follower">
+            <span>Repositories - </span>
+            <span> {length}</span>
           </p>
         </div>
         <button className="hire-btn">Hire Me</button>
