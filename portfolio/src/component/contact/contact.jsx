@@ -8,19 +8,17 @@ export default function Contact() {
     email: "admin@gmail.com",
     phone: "858454647",
     idea: "want project"
-  }); // key-value
+  }); 
 
   const handleInput = (e) => {
     const key = e.target.name;
     const value = e.target.value;
 
-    const temp = { ...user }; // editable,
+    const temp = { ...user }; 
     temp[key] = value
 
-    setUser(temp); // assign update variable in state.
+    setUser(temp); 
   }
-
-  // more tha 2 fields - 
 
   const handleSubmit = () => {
     console.log(user);
